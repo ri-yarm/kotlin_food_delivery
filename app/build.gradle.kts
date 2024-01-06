@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.example.fooddelivery"
-    compileSdk = 33
+    compileSdk = 34 // Обновляем compileSdk до версии 34
 
     defaultConfig {
         applicationId = "com.example.fooddelivery"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 33 // Обновляем targetSdk до версии 34
         versionCode = 1
         versionName = "1.0"
 
