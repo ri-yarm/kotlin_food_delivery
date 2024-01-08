@@ -41,25 +41,28 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
+    <fragment
         android:id="@+id/fragment_container"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:defaultNavHost="true"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout" />
+        app:layout_constraintTop_toBottomOf="@+id/layout"
+        app:navGraph="@navigation/navigation_fragment" />
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
-        app:menu="@menu/bottom_menu"
         android:layout_height="80dp"
-        app:itemIconTint="@color/black"
         android:background="@color/white"
+        app:itemIconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
