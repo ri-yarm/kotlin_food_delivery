@@ -7,11 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import androidx.viewpager2.widget.ViewPager2
 import com.example.fooddelivery.Adapters.ImageSliderAdapter
+import com.example.fooddelivery.Adapters.PopularAdapter
+import com.example.fooddelivery.Models.PopularModel
 
 class HomeFragment : Fragment() {
 
@@ -19,6 +22,9 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: ImageSliderAdapter
     private lateinit var imageList: ArrayList<Int>
     private lateinit var handler: Handler
+    private lateinit var popularAdapter: PopularAdapter
+    private lateinit var listPopular: ArrayList<PopularModel>
+    private lateinit var homeRV: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +36,34 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         viewPager2 = view.findViewById(R.id.imageSlider)
+
+        homeRV = view.findViewById(R.id.home_RV)
+        listPopular = ArrayList()
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+        listPopular.add(PopularModel(R.drawable.pop_menu_burger, "Sandwich", "5$"))
+
+        popularAdapter = PopularAdapter(requireContext(), listPopular)
+
+        homeRV.layoutManager = LinearLayoutManager(requireContext())
+        homeRV.adapter = popularAdapter
+
+
+
+
+
+
+
+
+
         return view
     }
 

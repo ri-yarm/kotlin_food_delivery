@@ -4,4 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="startGreenColor">#53E88B</color>
     <color name="endGreenColor">#15BE77</color>
+    <color name="recyclerViewColor">#f4f4f4</color>
 </resources>
